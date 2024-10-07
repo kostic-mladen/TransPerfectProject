@@ -30,9 +30,6 @@ public class TaskPage4 extends BaseTest {
     public String favoriteSport = "Football";
     public String emptyString = "";
 
-
-
-
     @Test
     public void openUrl(){
         driver.get(autoCompleteUrl); // Open URL

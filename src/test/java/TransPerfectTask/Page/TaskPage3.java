@@ -15,8 +15,6 @@ public class TaskPage3 extends BaseTest {
     public TaskPage3() {
         PageFactory.initElements(driver, this);
     }
-    @FindBy (xpath = "/html/body/app-root/my-app/kendo-grid/kendo-grid-group-panel/kendo-chiplist/kendo-chip/kendo-icon-wrapper/kendo-svgicon")
-    public WebElement countryField;
 
     @FindBy(id = "k-grid0-select-all")
     public WebElement selectAll;
@@ -24,28 +22,17 @@ public class TaskPage3 extends BaseTest {
     @FindBy(xpath = "//span[contains(text(), 'Export to Excel')]")
     public WebElement exportToExcelButton;
 
-    @FindBy(xpath = "//span[@class='k-column-title' and text()='Country']")
-    public WebElement sourceElement;
-    @FindBy(className = "k-grouping-drop-container")
-    public WebElement targetElement;
-
-    @FindBy(xpath = "//a[@title='Country Column Menu']")
-    public WebElement countryMenu;
-
-    @FindBy(xpath = "//div[@role='button' and contains(@class, 'k-columnmenu-item') and contains(text(), 'Sort Descending')]")
-    public WebElement descSort;
-
     @FindBy(css = "a.k-grid-header-menu.k-grid-column-menu[title='Status Column Menu']")
     public WebElement statusMenu;
 
-    @FindBy(xpath = "//div[@role='button' and contains(text(), 'Filter')]")
+    @FindBy(xpath = "//*[@id=\"k-grid0-column-menu-0\"]/kendo-grid-columnmenu-container/kendo-grid-columnmenu-container/kendo-grid-columnmenu-filter/kendo-grid-columnmenu-item/div/div[1]")
     public WebElement filterCountyIcon;
 
-    @FindBy(css = "input.k-textbox.k-input[aria-label='Country Filter']")
+    @FindBy(xpath = "(//input[@aria-label='Country Filter'])[1]")
     public WebElement countryFilterInput;
 
     @FindBy(css = "button.k-button.k-button-solid-primary.k-button-md[type='submit']")
-    public WebElement filterButton;
+    public WebElement filterStatus;
 
     @FindBy(xpath = "(//div[@class='k-columnmenu-item ng-tns-c2035614799-8 ng-star-inserted'])[1]")
     public WebElement filterStatusButton;
@@ -68,11 +55,13 @@ public class TaskPage3 extends BaseTest {
     }
     public void findAllEmployeesFromUS(){
         openUrl(); // Open URL
+        waitForElement(countryColumnMenu);
         clickOnElement(countryColumnMenu);
         waitForElement(filterCountyIcon);
         clickOnElement(filterCountyIcon);
+        waitForElement(countryFilterInput);
         countryFilterInput.sendKeys("US");
-        clickOnElement(filterButton); // Find all employees from US
+        clickOnElement(filterStatus); // Find all employees from US
     }
 
     public void printAllTheEmployeesFromUS(){

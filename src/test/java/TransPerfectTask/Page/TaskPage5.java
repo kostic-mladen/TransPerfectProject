@@ -45,13 +45,11 @@ public class TaskPage5 extends BaseTest {
         return dropdownOptions;
 
     }
-
     public void openUrl() {
         driver.get(autoCompleteUrl); //Open URL
         Assert.assertEquals(driver.getCurrentUrl(), autoCompleteUrl); // Verifying Open URL
         Assert.assertNotEquals(driver.getCurrentUrl(), employeesUrl); // Verifying Open URL
     }
-
 
     public void verifyOptionsFromDropdownWithScroll() {
 
@@ -74,10 +72,7 @@ public class TaskPage5 extends BaseTest {
         Assert.assertTrue(isDisplayed(footballSelected)); //Verify chosen results
         Assert.assertTrue(isDisplayed(tennisSelected)); //Verify chosen results
 
-
     }
-
-
 
 }
 

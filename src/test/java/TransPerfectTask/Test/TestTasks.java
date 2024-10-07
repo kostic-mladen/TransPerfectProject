@@ -3,6 +3,9 @@ package TransPerfectTask.Test;
 import TransPerfectTask.Base.BaseTest;
 import TransPerfectTask.Page.*;
 import org.junit.Test;
+
+
+
 import java.io.IOException;
 public class TestTasks extends BaseTest { //run tests
 
@@ -24,7 +27,6 @@ public class TestTasks extends BaseTest { //run tests
         taskPage1.verifyDialogIsClosed();
 
     }
-
     @Test
     public void task2(){
         taskPage2.openUrl();
@@ -49,11 +51,12 @@ public class TestTasks extends BaseTest { //run tests
         taskPage4.clearAutocompleteField();
     }
 
-
     @Test
     public void task5(){
         taskPage5.openUrl();
         taskPage5.verifyChosenSportResults();
         taskPage5.verifyChosenSportResults();
     }
-    }
+
+}
+
