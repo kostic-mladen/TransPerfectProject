@@ -54,7 +54,6 @@ public class TaskPage3 extends BaseTest {
         Assert.assertNotEquals(driver.getCurrentUrl(), openDialogUrl); // Verifying Open URL
     }
     public void findAllEmployeesFromUS(){
-        openUrl(); // Open URL
         waitForElement(countryColumnMenu);
         clickOnElement(countryColumnMenu);
         waitForElement(filterCountyIcon);
