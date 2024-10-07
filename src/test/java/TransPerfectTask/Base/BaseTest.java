@@ -13,7 +13,7 @@ import java.time.Duration;
 public class BaseTest {
 
  public static WebDriver driver;
- public String openDialogUrl = "https://demos.telerik.com/kendo-angular-ui/demos/dialogs/preview?theme=default-main";
+ public static String openDialogUrl = "https://demos.telerik.com/kendo-angular-ui/demos/dialogs/preview?theme=default-main";
  public static String autoCompleteUrl = "https://demos.telerik.com/kendo-angular-ui/demos/dropdowns/overview?theme=default-main";
  public static String employeesUrl = "https://demos.telerik.com/kendo-angular-ui/demos/grid/filter-all-columns?theme=default-main";
 
