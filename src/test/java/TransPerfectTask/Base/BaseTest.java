@@ -24,6 +24,7 @@ public class BaseTest {
     public static void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
     }
     public boolean isDisplayed(WebElement element) {
         boolean webElement = false;
@@ -53,6 +54,7 @@ public class BaseTest {
      @AfterClass
              public static void tearDown(){
          if (driver != null) {
+             driver.manage().deleteAllCookies();
              driver.quit();
          }
      }
