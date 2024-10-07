@@ -117,7 +117,7 @@ Steps to Run the Tests:
 
 Clone the repository:
    ```bash
-   git clone
+   git clone https://github.com/kostic-mladen/TransPerfectProject.git
 
 
 
