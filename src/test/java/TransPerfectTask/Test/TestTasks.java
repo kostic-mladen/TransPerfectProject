@@ -9,53 +9,53 @@ import org.junit.Test;
 import java.io.IOException;
 public class TestTasks extends BaseTest { //run tests
 
-    TaskPage1 taskPage1 = new TaskPage1();
-    TaskPage2 taskPage2 = new TaskPage2();
-    TaskPage3 taskPage3 = new TaskPage3();
-    TaskPage4 taskPage4 = new TaskPage4();
-    TaskPage5 taskPage5 = new TaskPage5();
+    OpenDialog openDialog = new OpenDialog();
+    OpenWindow openWindow = new OpenWindow();
+    EmployeesPage employeesPage = new EmployeesPage();
+    AutoCompleteSport autocompleteSport = new AutoCompleteSport();
+    MultiSelectSport multiSelectSport = new MultiSelectSport();
 
     @Test
     public void task1(){
 
-        taskPage1.openDialogUrl();
-        taskPage1.clickOnDialogButton();
-        taskPage1.verifyDialogElements();
-        taskPage1.verifyBackgroundColorYesButton();
-        taskPage1.putFocusOnX();
-        taskPage1.closeDialogOnEnterKey();
-        taskPage1.verifyDialogIsClosed();
+        openDialog.openDialogUrl();
+        openDialog.clickOnDialogButton();
+        openDialog.verifyDialogElements();
+        openDialog.verifyBackgroundColorYesButton();
+        openDialog.putFocusOnX();
+        openDialog.closeDialogOnEnterKey();
+        openDialog.verifyDialogIsClosed();
 
     }
     @Test
     public void task2(){
-        taskPage2.openUrl();
-        taskPage2.clickOnOpenWindowButton();
-        taskPage2.verifyDataFromWindow();
-        taskPage2.maximizeWindow();
-        taskPage2.closeWindow();
+        openWindow.openUrl();
+        openWindow.clickOnOpenWindowButton();
+        openWindow.verifyDataFromWindow();
+        openWindow.maximizeWindow();
+        openWindow.closeWindow();
     }
 
     @Test
     public void task3() throws InterruptedException, IOException {
-        taskPage3.openUrl();
-        taskPage3.findAllEmployeesFromUS();
-        taskPage3.printAllTheEmployeesFromUS();
-        taskPage3.exportInExcelTableAllEmployeesFromUSAThatAreOnline();
+        employeesPage.openUrl();
+        employeesPage.findAllEmployeesFromUS();
+        employeesPage.printAllTheEmployeesFromUS();
+        employeesPage.exportInExcelTableAllEmployeesFromUSAThatAreOnline();
     }
 
     @Test
     public void task4(){
-        taskPage4.openUrl();
-        taskPage4.chooseSportInAutocompleteField();
-        taskPage4.clearAutocompleteField();
+        autocompleteSport.openUrl();
+        autocompleteSport.chooseSportInAutocompleteField();
+        autocompleteSport.clearAutocompleteField();
     }
 
     @Test
     public void task5(){
-        taskPage5.openUrl();
-        taskPage5.verifyChosenSportResults();
-        taskPage5.verifyChosenSportResults();
+        multiSelectSport.openUrl();
+        multiSelectSport.verifyChosenSportResults();
+        multiSelectSport.verifyChosenSportResults();
     }
 
 }

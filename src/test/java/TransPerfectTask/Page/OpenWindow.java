@@ -7,11 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class TaskPage2 extends BaseTest {
+public class OpenWindow extends BaseTest {
 
-    TaskPage1 taskPage1 = new TaskPage1();
+    OpenDialog openDialog = new OpenDialog();
 
-    public TaskPage2() {
+    public OpenWindow() {
         PageFactory.initElements(driver, this);
     }
 
@@ -41,12 +41,12 @@ public class TaskPage2 extends BaseTest {
     public void openUrl(){
         driver.get(openDialogUrl);
         Assert.assertEquals(driver.getCurrentUrl(), openDialogUrl); // Verifying Open URL
-        Assert.assertTrue(isDisplayed(taskPage1.openWindowButton));
+        Assert.assertTrue(isDisplayed(openDialog.openWindowButton));
     }
     @Test
     public void clickOnOpenWindowButton(){
         openUrl();
-        clickOnElement(taskPage1.openWindowButton); // Click on Open Window button
+        clickOnElement(openDialog.openWindowButton); // Click on Open Window button
         Assert.assertTrue(isDisplayed(windowCloseButton));
     }
     @Test
@@ -57,7 +57,7 @@ public class TaskPage2 extends BaseTest {
         Assert.assertEquals(additionalInfoText.getText(), textParagraph); // Additional info text
         Assert.assertTrue(isDisplayed(minimizeButton)); //Minimize button
         Assert.assertTrue(isDisplayed(maximizeButton)); //Maximize button
-        Assert.assertFalse(isDisplayed(taskPage1.openDialogButton)); //Verifying that window is maximized
+        Assert.assertFalse(isDisplayed(openDialog.openDialogButton)); //Verifying that window is maximized
     }
     @Test
     public void maximizeWindow(){
@@ -70,8 +70,8 @@ public class TaskPage2 extends BaseTest {
         clickOnOpenWindowButton();
         clickOnElement(maximizeButton);
         clickOnElement(closeIcon); //closing window
-        Assert.assertTrue(isDisplayed(taskPage1.openWindowButton)); //Verifying the window is closed
-        Assert.assertTrue(isDisplayed(taskPage1.openWindowButton)); //Verifying the window is closed
+        Assert.assertTrue(isDisplayed(openDialog.openWindowButton)); //Verifying the window is closed
+        Assert.assertTrue(isDisplayed(openDialog.openWindowButton)); //Verifying the window is closed
     }
 
 

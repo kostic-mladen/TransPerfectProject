@@ -9,9 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class TaskPage4 extends BaseTest {
+public class AutoCompleteSport extends BaseTest {
 
-    public TaskPage4() {
+    public AutoCompleteSport() {
         PageFactory.initElements(driver, this);
     }
 

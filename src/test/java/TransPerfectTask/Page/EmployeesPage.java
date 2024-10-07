@@ -10,9 +10,9 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class TaskPage3 extends BaseTest {
+public class EmployeesPage extends BaseTest {
 
-    public TaskPage3() {
+    public EmployeesPage() {
         PageFactory.initElements(driver, this);
     }
 

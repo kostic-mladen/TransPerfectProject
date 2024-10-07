@@ -11,13 +11,13 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class TaskPage5 extends BaseTest {
+public class MultiSelectSport extends BaseTest {
 
-    TaskPage4 taskPage4 = new TaskPage4();
+    AutoCompleteSport autocompleteSport = new AutoCompleteSport();
 
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    public TaskPage5() {
+    public MultiSelectSport() {
         PageFactory.initElements(driver, this);
     }
 
@@ -68,7 +68,7 @@ public class TaskPage5 extends BaseTest {
         clickOnElement(clearButton);
         clickOnElement(multiSelectField);
         multiSelectField.sendKeys("Tennis" + Keys.ENTER + "Football" + Keys.ENTER); // Choose Tennis and Football as favourite sport
-        clickOnElement(taskPage4.multiColumn);
+        clickOnElement(autocompleteSport.multiColumn);
         Assert.assertTrue(isDisplayed(footballSelected)); //Verify chosen results
         Assert.assertTrue(isDisplayed(tennisSelected)); //Verify chosen results
 

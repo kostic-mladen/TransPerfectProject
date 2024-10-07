@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class TaskPage1 extends BaseTest {
+public class OpenDialog extends BaseTest {
 
-    public TaskPage1() {
+    public OpenDialog() {
         PageFactory.initElements(driver, this);
     }
 
