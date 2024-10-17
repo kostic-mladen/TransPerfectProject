@@ -4,6 +4,7 @@ import TransPerfectTask.Base.BaseTest;
 import TransPerfectTask.Page.EmployeesPage;
 import org.junit.Test;
 
+
 import java.io.IOException;
 
 public class EmployeesTest extends BaseTest {
@@ -16,6 +17,7 @@ public class EmployeesTest extends BaseTest {
         employeesPage.findAllEmployeesFromUS();
         employeesPage.printAllTheEmployeesFromUS();
         employeesPage.exportInExcelTableAllEmployeesFromUSAThatAreOnline();
+        employeesPage.verifyExportedEmployeesFromExcelTable();
     }
 
 }

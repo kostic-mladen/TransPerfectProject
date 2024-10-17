@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 import java.time.Duration;
 
 public class BaseTest {
@@ -19,9 +21,11 @@ public class BaseTest {
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+    public ExcelReader excelReader;
 
     @BeforeClass
     public static void setUp(){
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -49,6 +53,7 @@ public class BaseTest {
     public void waitForElement(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+
 
 
      @AfterClass

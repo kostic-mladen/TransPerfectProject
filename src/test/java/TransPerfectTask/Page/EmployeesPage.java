@@ -1,6 +1,7 @@
 package TransPerfectTask.Page;
 
 import TransPerfectTask.Base.BaseTest;
+import TransPerfectTask.Base.ExcelReader;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+
+import java.io.IOException;
 import java.util.List;
+
 
 public class EmployeesPage extends BaseTest {
 
@@ -115,13 +119,25 @@ public class EmployeesPage extends BaseTest {
         return address;
     }
 
+    String[] names = {
+            "Sig Jeannel", "Lancelot Tanzer", "Wait Peperell", "Farr Penwright",
+            "Garey De Maria", "Elisabet Kimblin", "Clay Ellins", "Claiborne Willoughey",
+            "Codee Maybery", "Melony Millwater", "Malva Pierpoint", "Meggi Westman"
+    };
 
+    public void verifyExportedEmployeesFromExcelTable() throws IOException {
+        excelReader = new ExcelReader("src/test/java/TransPerfectTask/Employees.xlsx");
 
+        for(int i = 2; i <= excelReader.getLastRow("Sheet1"); i++) {
+            String actualNames;
+            actualNames  = excelReader.getStringData("Sheet1", i, 0);
+            String expectedNames = names[i-2];
 
+            Assert.assertEquals(actualNames, expectedNames);
+            System.out.println("Expected name: " + expectedNames + " | " + "Actual name: " + actualNames);
 
+    }
 
-
-
-
+    }
 
 }
