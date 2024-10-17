@@ -57,9 +57,9 @@ The following steps outline the tests performed in Task 3:
 
 3. Export in Excel table all employees from the USA that are Online:
    - The test filters the employees from the USA who are online and exports them into an Excel file named `Employees`.
-4. Verify exported employees from Excel table (Pending):
-   - This step is currently not completed.
-   - The goal is to verify that the exported Excel file contains the correct data.
+4. Verify exported employees from Excel table
+   - The test locates and prints all online employees from US from Excel table 
+   - The test verifies that all online employees from US is in Excel table
 ---
 Task 4: Verify Autocomplete Input Field
 
