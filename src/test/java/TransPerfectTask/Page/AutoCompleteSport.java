@@ -2,7 +2,6 @@ package TransPerfectTask.Page;
 
 import TransPerfectTask.Base.BaseTest;
 
-import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

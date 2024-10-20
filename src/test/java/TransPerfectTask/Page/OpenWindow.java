@@ -1,7 +1,6 @@
 package TransPerfectTask.Page;
 
 import TransPerfectTask.Base.BaseTest;
-import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
