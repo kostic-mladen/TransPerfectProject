@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MultiSelectSport extends BaseTest {
@@ -51,21 +53,29 @@ public class MultiSelectSport extends BaseTest {
         Assert.assertNotEquals(driver.getCurrentUrl(), employeesUrl); // Verifying Open URL
     }
 
+    String[] sports = {"Baseball", "Basketball", "Cricket", "Field Hockey", "Football", "Table Tennis",
+            "Tennis", "Volleyball" };
+
+
     public void verifyOptionsFromDropdownWithScroll() {
 
         clickOnElement(clearButton);
         clickOnElement(multiSelectField);
         waitForElement(dropDownList);
 
+        List<String> dropdownOptions = new ArrayList<>();
         for (WebElement option : getDropdownOptions()) {
-            js.executeScript("arguments[0].scrollIntoView(true);", option); // Verifying option from dropdown list
+            js.executeScript("arguments[0].scrollIntoView(true);", option); // Listing all options from dropdown list
+            dropdownOptions.add(option.getText());
             System.out.println(option.getText()); //Printing option from dropdown
         }
+
+        List<String> expectedOptions = Arrays.asList(sports);
+        Assert.assertEquals(dropdownOptions, expectedOptions); //Verifying option from dropdown list
     }
 
     public void verifyChosenSportResults(){
 
-        clickOnElement(clearButton);
         clickOnElement(multiSelectField);
         multiSelectField.sendKeys("Tennis" + Keys.ENTER + "Football" + Keys.ENTER); // Choose Tennis and Football as favourite sport
         clickOnElement(autocompleteSport.multiColumn);

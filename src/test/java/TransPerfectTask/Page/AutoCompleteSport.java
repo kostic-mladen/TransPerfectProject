@@ -30,14 +30,14 @@ public class AutoCompleteSport extends BaseTest {
     public String favoriteSport = "Football";
     public String emptyString = "";
 
-    @Test
+
     public void openUrl(){
         driver.get(autoCompleteUrl); // Open URL
         Assert.assertEquals(driver.getCurrentUrl(), autoCompleteUrl); // Verifying Open URL
         Assert.assertNotEquals(driver.getCurrentUrl(), employeesUrl); // Verifying Open URL
     }
 
-    @Test
+
     public void chooseSportInAutocompleteField(){
         clickOnElement(autoCompleteField);
         autoCompleteField.clear();
@@ -46,7 +46,7 @@ public class AutoCompleteSport extends BaseTest {
         Assert.assertEquals(autoCompleteField.getAttribute("value"), favoriteSport); //Verify chosen results
     }
 
-    @Test
+
     public void clearAutocompleteField(){
         clickOnElement(clearButton); // Clear chosen sport on “x”
         Assert.assertEquals(autoCompleteField.getAttribute("value"),emptyString); //Verify the field is cleared

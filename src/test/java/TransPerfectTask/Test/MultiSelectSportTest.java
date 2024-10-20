@@ -12,7 +12,9 @@ public class MultiSelectSportTest extends BaseTest {
     @Test
     public void task5(){
         multiSelectSport.openUrl();
+        multiSelectSport.verifyOptionsFromDropdownWithScroll();
         multiSelectSport.verifyChosenSportResults();
-        multiSelectSport.verifyChosenSportResults();
+
+
     }
 }

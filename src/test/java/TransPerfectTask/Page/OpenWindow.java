@@ -37,19 +37,19 @@ public class OpenWindow extends BaseTest {
     public String textParagraph = "Additional info";
 
 
-    @Test
+
     public void openUrl(){
         driver.get(openDialogUrl);
         Assert.assertEquals(driver.getCurrentUrl(), openDialogUrl); // Verifying Open URL
         Assert.assertTrue(isDisplayed(openDialog.openWindowButton));
     }
-    @Test
+
     public void clickOnOpenWindowButton(){
         openUrl();
         clickOnElement(openDialog.openWindowButton); // Click on Open Window button
         Assert.assertTrue(isDisplayed(windowCloseButton));
     }
-    @Test
+
     public void verifyDataFromWindow(){
         clickOnOpenWindowButton();
         Assert.assertTrue(isDisplayed(windowCloseButton)); //Close button
@@ -59,13 +59,11 @@ public class OpenWindow extends BaseTest {
         Assert.assertTrue(isDisplayed(maximizeButton)); //Maximize button
         Assert.assertFalse(isDisplayed(openDialog.openDialogButton)); //Verifying that window is maximized
     }
-    @Test
     public void maximizeWindow(){
         clickOnOpenWindowButton();
         clickOnElement(maximizeButton);
         Assert.assertFalse(isDisplayed(maximizeButton)); // Verify Maximize button is not visible
     }
-    @Test
     public void closeWindow(){
         clickOnOpenWindowButton();
         clickOnElement(maximizeButton);

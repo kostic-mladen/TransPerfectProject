@@ -51,7 +51,6 @@ public class EmployeesPage extends BaseTest {
     public WebElement countryColumnMenu;
 
 
-    @Test
     public void openUrl(){
         driver.get(employeesUrl); //Open URL
         Assert.assertEquals(driver.getCurrentUrl(), employeesUrl); // Verifying Open URL

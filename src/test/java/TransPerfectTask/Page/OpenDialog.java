@@ -18,7 +18,6 @@ public class OpenDialog extends BaseTest {
     public WebElement openDialogButton;
 
     @FindBy (css = "button.k-button.k-button-md.k-rounded-md.k-button-solid-primary.k-button-solid.ng-star-inserted")
-    //(xpath = "/html/body/app-root/my-app/my-dialogs/div/kendo-dialog/div[2]/kendo-dialog-actions/button[2]")
     public WebElement yesButton;
 
 
